@@ -7,7 +7,7 @@ from sqlalchemy.orm import sessionmaker
 
 load_dotenv() 
 
-DATABASE_URL = "postgresql+psycopg2://fl0user:OsfbXTj80SCM@ep-little-boat-36912009.ap-southeast-1.aws.neon.fl0.io:5432/panam?sslmode=verify-full&options=endpoint%3Dep-little-boat-36912009"
+DATABASE_URL = "postgres://fl0user:D0apdLeP8Jxj@ep-green-term-61680709.us-east-2.aws.neon.fl0.io:5432/panamdb?sslmode=require"
 #DATABASE_URL = os.getenv('DATABASE_URL')
 engine = create_engine(DATABASE_URL, pool_pre_ping=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
