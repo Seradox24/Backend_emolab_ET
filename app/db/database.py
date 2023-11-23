@@ -1,11 +1,14 @@
 # database.py
-'''
+from dotenv import load_dotenv
+import os
 from sqlalchemy import create_engine
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 
-DATABASE_URL = "postgresql+psycopg2://fl0user:OsfbXTj80SCM@ep-little-boat-36912009.ap-southeast-1.aws.neon.fl0.io:5432/panam"
+load_dotenv() 
 
+DATABASE_URL = "postgresql+psycopg2://fl0user:OsfbXTj80SCM@ep-little-boat-36912009.ap-southeast-1.aws.neon.fl0.io:5432/panam"
+#DATABASE_URL = os.getenv('DATABASE_URL')
 engine = create_engine(DATABASE_URL, pool_pre_ping=True)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
@@ -20,7 +23,8 @@ def get_db():
         db.close()
 # Más abajo en el archivo...
 # Agrega la creación de las tablas y otros elementos necesarios
-'''
+
+''' 
 from dotenv import load_dotenv
 import os
 # app/db/database.py
@@ -42,3 +46,6 @@ engine = create_engine(DATABASE_URL)
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 Base = declarative_base()
+
+'''
+
